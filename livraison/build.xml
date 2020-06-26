@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Bataille Navale" default="compile" basedir=".">
+
+<property name="build.dir" value="build"/>
+<property name="src.dir" value="src"/>
+
+<path id="classpath">
+		<fileset dir="${basedir}/dist">
+			<include name="*.jar" />
+		</fileset>
+</path>
+	
+<target name="init" depends="clean">
+	<echo message="Initialisation de ${ant.project.name}"/>
+</target>
+
+<target name="copy" description="Copie du repertoire image" depends="init">
+	<mkdir dir="${build.dir}"/>
+	<copy todir="${basedir}/images">
+	  <fileset dir="src/images"/>
+	</copy>
+</target>
+
+<target name="compile" depends="copy">
+	<javac srcdir="src/bataille : src/bataille/modele : src/bataille/modele/players : src/bataille/vue : src/bataille/controleur : src/bataille/selectionBat" destdir="${basedir}/build"/>
+</target>
+
+<target name="clean" description="Nettoyage">
+	<delete dir="${build.dir}"/>
+	<delete dir="${basedir}/dist"/>
+	<delete dir="${basedir}/images"/>
+	<delete dir="${basedir}/doc"/>
+	<mkdir dir="${basedir}/doc"/>
+	<mkdir dir="${basedir}/dist"/>
+</target>
+
+<target name="jar" depends="compile">
+	<jar destfile="${basedir}/dist/Bataille.jar" basedir="${basedir}/build">
+		<manifest>
+			<attribute name="Main-Class" value="bataille.Main"/>
+		</manifest>
+	</jar>
+</target>
+
+<target name="run" description="Execution de Sokoban" depends="javadoc">
+	<java jar="${basedir}/dist/Bataille.jar" fork="true"> </java>
+</target>
+
+<target name="javadoc" description="Generate JavaDoc" depends="jar">
+	<javadoc destdir="${basedir}/doc" classpathref="classpath" packagenames="*.*"
+			author="false" private="true" version="true" windowtitle="Simple Documentation">
+			<packageset dir="src" />
+	</javadoc>
+</target>
+
+</project>
