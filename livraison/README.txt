@@ -1,7 +1,7 @@
-AZOUI Zineb - 21709992 - Licence Informatique (2eme Année)
-BOUDET Maëlys - 21700975 - Licence Informatique (2eme Année)
-LEPETIT Lucie - 21203742 - Licence Informatique (2eme Année)
-YANG Tatiana - 21605680 - Licence Informatique (2eme Année)
+AZOUI Zineb - Licence Informatique (2eme Année)
+BOUDET Maëlys - Licence Informatique (2eme Année)
+LEPETIT Lucie - Licence Informatique (2eme Année)
+YANG Tatiana - Licence Informatique (2eme Année)
 
 
 Afin d'éxécuter notre Bataille Navale : 
