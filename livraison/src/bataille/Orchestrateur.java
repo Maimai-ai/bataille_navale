@@ -36,6 +36,8 @@ public class Orchestrateur{
 		int compteur = 0;
 		while(nbBateau != 5){
 			if(compteur == 0){
+				System.out.println("Votre plateau actuellement : \n" + this.partie.situationToString(false));
+				playerRandom.afficheBateau(this.partieRandom,taille[compteur]);
 				System.out.println("Posez votre " + (compteur+1) + "er bateau de taille " + taille[compteur] + " : ");
 			}
 			else{
