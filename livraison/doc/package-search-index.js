@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"bataille"},{"l":"bataille.controleur"},{"l":"bataille.modele"},{"l":"bataille.modele.players"},{"l":"bataille.selectionBat"},{"l":"bataille.vue"}]
